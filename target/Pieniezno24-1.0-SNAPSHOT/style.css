@@ -1,0 +1,128 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-12-26, 18:43:03
+    Author     : alexp
+*/
+
+a {
+    text-decoration:none;
+}
+a.underlined {
+    text-decoration:underline;
+}
+a:visited {
+    color:white;
+} 
+
+body {
+    background-color: #58595b;
+    margin: 0;
+    font-family: Cambria;
+}
+
+header {
+    background-color: red;
+    height: 130px;
+}
+
+#top_logo {
+    background-color: white;
+    height: 75%;
+}
+
+#top_menu{
+    background-color: #376ace;
+    height: 25%;
+}
+
+#top_menu_container {
+    margin-left: 20%;
+    line-height: 35px;
+}
+
+.top_menu_element {
+    margin-left: 30px;  
+    color: white;
+    display: inline;
+
+}
+
+.top_menu_element:first-child {
+    margin-left: 0;
+}
+
+#content_container {
+    background-color: #e2e2e2;
+    min-height: 500px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#article_title {
+    font-family: Cambria;
+    font-size: 30px;
+    background-color: white;
+    padding: 10px;
+    
+}
+
+#article_content {
+    padding: 10px;
+}
+
+.form_element {
+    padding: 5px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.form_element_coord {
+    padding: 5px;
+    width: 22%;
+    margin-bottom: 10px;
+}
+
+#logo {
+    height: 100%;
+    margin-left: 20%;
+}
+
+#centered_button {
+    margin: 0 auto;
+    height: 40px;
+    font-size: 15px;
+    background-color: #376ace;
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+#centered_element {
+    width: 100%;
+}
+
+td {
+    font-weight: normal; 
+    height: 50px;
+}
+
+#header_td {
+    font-weight: normal; 
+    background-color: #376ace;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.weather_img {
+    width: 60px;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+}

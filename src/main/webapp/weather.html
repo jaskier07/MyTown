@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+        <head>
+                <title>Pogoda</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+                <script type="text/javascript" src="scripts/layout.js"></script>
+                <script type="text/javascript" src="scripts/api.js"></script>
+        </head>
+        <body>
+                <header>                 
+                        <script type="text/javascript">
+                                createTopBar();
+                                $(document).ready(initForm);
+                        </script>              
+                </header>
+                <div id="content_container">
+                        <div id="article_title">Pogoda w Pieniężnie (i nie tylko!)</div>
+                        <!--                        <script>getWeather();</script>-->
+                        <div id="article_content">
+                                <form id="weather_form" action="javascript:getWeather()" method="post" enctype="multipart/form-data">
+                                        <table style="width: 100%">
+                                                <tr>
+                                                        <th>Współrzędne geograficzne</th>
+                                                        <th>
+                                                                <input form="weather_form" class="form_element_coord" type="text" name="x_coord" value="32">
+                                                                <input form="weather_form" class="form_element_coord" type="text" name="y_coord" >
+                                                        </th>
+                                                </tr>
+                                                <tr>
+                                                        <th>Jednostki temperatury</th>
+                                                        <th>
+                                                                <select form="weather_form" class="form_element" name="temp_degree">
+                                                                        <option>Stopnie Celcjusza</option>
+                                                                        <option>Stopnie Kelvina</option>
+                                                                        <option>Stopnie Farenheita</option>
+                                                                </select>
+                                                          </th>
+                                                </tr>
+                                        </table>
+                                        <div id="centered_element">
+                                                <input form="weather_form" type="submit"  id="centered_button" name="submit_form" value="Sprawdź pogodę">
+                                        </div>
+                                        <br/>
+                                        <table id="weather_table" style="width: 100%">
+                                                <tr>
+                                                        <td id="header_td">Data i godzina</td>
+                                                        <td id="header_td">Temperatura</td>
+                                                        <td id="header_td">Img</td>
+                                                        <td id="header_td">Warunki pogodowe</td>
+                                                        <td id="header_td">Ciśnienie</td>
+                                                </tr>
+                                        </table>
+                                </form>
+                        </div>
+                </div>
+        </body>
+</html>

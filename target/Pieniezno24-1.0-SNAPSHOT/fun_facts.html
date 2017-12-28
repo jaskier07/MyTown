@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+        <head>
+                <title>Ciekawostki o Pieniężnie</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+                <script type="text/javascript" src="scripts/layout.js"></script>
+        </head>
+        <body>
+                <header>                 
+                        <script type="text/javascript">createTopBar();</script>                
+                </header>
+                <div id="content_container">
+                        <div id="article_title">Ciekawostki o Pieniężnie</div>
+                        <div id="article_content">
+                                <form id="fun_facts_form" action="javascript:getFunFacts()" method="post" enctype="multipart/form-data">
+                                        <table style="width: 100%">
+                                                <tr>
+                                                        <th>Liczba wyświetlanych wyników</th>
+                                                        <th>
+                                                                <select form="fun_facts_form_limit" class="form_element" name="fact_limit">
+                                                                        <option>5</option>
+                                                                        <option>10</option>
+                                                                        <option>15</option>
+                                                                </select>
+                                                        </th>
+                                                </tr>
+                                                <tr>
+                                                        <th>Sortowanie</th>
+                                                        <th>
+                                                                <select form="fun_facts_form_sort" class="form_element" name="fact_sort">
+                                                                        <option>Alfabetycznie</option>
+                                                                        <option>W kolejności dodania</option>
+                                                                </select>
+                                                        </th>
+                                                </tr>
+                                                 <tr>
+                                                        <th>Istotność ciekawostek</th>
+                                                        <th>
+                                                                <select form="fun_facts_form_importance" class="form_element" name="fact_importance">
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                </select>
+                                                        </th>
+                                                </tr>
+                                        </table>
+                                        <div id="centered_element">
+                                                <input form="fun_facts_form" type="submit"  id="centered_button" name="submit_form_facts" value="Pokaż ciekawostki">
+                                        </div>
+                                </form>
+                        </div>
+                </div>
+        </body>
+</html>
