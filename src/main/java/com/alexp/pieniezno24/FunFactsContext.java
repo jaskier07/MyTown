@@ -31,26 +31,29 @@ public class FunFactsContext {
         public static final int IMPORTANCE_END = 1;
         public static final int TEXT_BEGIN = 2;
         
-        private final SortedMap<Integer,FunFact> facts;    
+        //private final SortedMap<Integer,FunFact> facts;    
+        private final List<FunFact> facts;    
        
         public FunFactsContext() throws FileNotFoundException, IOException {
-                facts = Collections.synchronizedSortedMap(new TreeMap<Integer, FunFact>());
+                //facts = Collections.synchronizedSortedMap(new TreeMap<Integer, FunFact>());
+                facts = Collections.synchronizedList(new ArrayList<FunFact>());
                 BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(PATH_TO_SOURCE_FILE)));//new FileReader(PATH_TO_SOURCE_FILE)); 
                  
-                int index = 0;
+                int index = 1;
                 int importance;
                 String text;
                 String line;
                 while((line = reader.readLine()) != null) {
                         importance = Integer.parseInt(line.substring(IMPORTANCE_BEGIN, IMPORTANCE_END));
                         text = line.substring(TEXT_BEGIN,line.length());
-                        facts.put(index, new FunFact(index, importance, text));
+                        //facts.put(index, new FunFact(index, importance, text));
+                        facts.add(index, new FunFact(index, importance, text));
                         index++;
                 }
         }
         
-        public List<FunFact> findAllFacts() {
-                return new ArrayList<>(facts.values());
+        public ArrayList<FunFact> findAllFacts() {
+                return new ArrayList<>(facts);
         }
         
 }

@@ -13,6 +13,7 @@ and open the template in the editor.
                 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
                 <script type="text/javascript" src="scripts/layout.js"></script>
                 <script type="text/javascript" src="scripts/api.js"></script>
+                <script type="text/javascript" src="scripts/funfactshandle.js"></script>
         </head>
         <body>
                 <header>                 
@@ -37,8 +38,8 @@ and open the template in the editor.
                                                         <th>Sortowanie</th>
                                                         <th>
                                                                 <select form="fun_facts_form_sort" class="form_element" name="fact_sort">
-                                                                        <option>Alfabetycznie</option>
-                                                                        <option>W kolejności dodania</option>
+                                                                        <option value="1">W kolejności dodania</option>
+                                                                        <option value="0">Najpierw najistotniejsze</option>
                                                                 </select>
                                                         </th>
                                                 </tr>
@@ -46,6 +47,7 @@ and open the template in the editor.
                                                         <th>Istotność ciekawostek</th>
                                                         <th>
                                                                 <select form="fun_facts_form_importance" class="form_element" name="fact_importance">
+                                                                        <option value="0">Bez znaczenia</option>
                                                                         <option>1</option>
                                                                         <option>2</option>
                                                                         <option>3</option>

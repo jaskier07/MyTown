@@ -23,14 +23,14 @@ and open the template in the editor.
                 </header>
                 <div id="content_container">
                         <div id="article_title">Pogoda w Pieniężnie (i nie tylko!)</div>
-                        <!--                        <script>getWeather();</script>-->
+                        <div id="data_error"></div>
                         <div id="article_content">
                                 <form id="weather_form" action="javascript:getWeather()" method="post" enctype="multipart/form-data">
                                         <table style="width: 100%">
                                                 <tr>
                                                         <th>Współrzędne geograficzne</th>
                                                         <th>
-                                                                <input form="weather_form" class="form_element_coord" type="text" name="x_coord" value="32">
+                                                                <input form="weather_form" class="form_element_coord" type="text" name="x_coord">
                                                                 <input form="weather_form" class="form_element_coord" type="text" name="y_coord" >
                                                         </th>
                                                 </tr>

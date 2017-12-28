@@ -1,0 +1,5 @@
+com\alexp\pieniezno24\DistanceApiServlet.class
+com\alexp\pieniezno24\ProcessingDataServlet.class
+com\alexp\pieniezno24\FunFactsContext.class
+com\alexp\pieniezno24\FunFact.class
+com\alexp\pieniezno24\resources\FunFactsResource.class
