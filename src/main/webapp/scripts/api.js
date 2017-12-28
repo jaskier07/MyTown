@@ -64,8 +64,29 @@ function getWeather() {
          console.log("jestem tutaj 3");*/
 }
 
-function getFunFacts() {
+function getDistance() {
+        var origin = "&origins=" + "nowy dwór gdański";
+        var destination = "&destinations="  + "pieniężno";
+        var transport = "?mode=" +  "driving";
+        var units = "?units=" + "metric";
         
+        var request = "http://maps.googleapis.com/maps/api/distancematrix/json" + units + transport + origin + destination;
+        request = encodeURI(request);
+        dbg(request);
+        
+       // $.getJSON('resources')
+}
+
+function getFunFacts() {
+        $.getJSON('resources/facts/list', function(data) {
+                var table = $("#facts_table");
+                    $.each(data, function (i, fact) {
+                        var row = $('<tr>').appendTo(table);
+                        $('<td>').text(fact.id + ", " + fact.importance + ", " + fact.text).appendTo(row);
+                    });
+        }).error(function (jqXHR) {
+                console.log("incoming Text " + jqXHR.responseText);
+        });
 }
 
 function initMap() {

@@ -12,6 +12,7 @@ and open the template in the editor.
                 <link rel="stylesheet" type="text/css" href="style.css">
                 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
                 <script type="text/javascript" src="scripts/layout.js"></script>
+                <script type="text/javascript" src="scripts/api.js"></script>
         </head>
         <body>
                 <header>                 
@@ -19,6 +20,41 @@ and open the template in the editor.
                 </header>
                 <div id="content_container">
                         <div id="article_title">Jak daleko masz do Pieniężna?</div>
+                        <div id="article_content">
+                                <form id="distance_form" action="javascript:getDistance()" method="post" enctype="multipart/form-data">
+                                        <table style="width: 100%">
+                                                <tr>
+                                                        <th>Twoje miasto</th>
+                                                        <th>
+                                                                <input form="distance_form" class="form_element" type="text" name="dist_origin" value="32">
+                                                        </th>
+                                                </tr>
+                                                <tr>
+                                                        <th>Środek transportu</th>
+                                                        <th>
+                                                                <select form="distance_form" class="form_element" name="dist_transport">
+                                                                        <option value="driving">Samochód</option>
+                                                                        <option>Rower</option>
+                                                                        <option>Komunikacja publiczna</option>
+                                                                        <option>Pieszo</option>
+                                                                </select>
+                                                          </th>
+                                                </tr>
+                                                <tr>
+                                                        <th>Jednostki odległości</th>
+                                                        <th>
+                                                                <select form="distance_form" class="form_element" name="dist_units">
+                                                                        <option>Metry</option>
+                                                                        <option>Mile</option>
+                                                                </select>
+                                                          </th>
+                                                </tr>
+                                        </table>
+                                        <div id="centered_element">
+                                                <input form="distance_form" type="submit"  id="centered_button" name="distance_submit_form" value="Zmierz czas i odległość">
+                                        </div>
+                                </form>
+                        </div>
                 </div>
         </body>
 </html>
