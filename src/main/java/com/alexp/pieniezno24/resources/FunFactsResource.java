@@ -23,6 +23,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -38,6 +39,8 @@ public class FunFactsResource {
         public static final int NO_IMPORTANCE = 0;
         public static final int SORT_BY_IMPORTANCE = 0;
         public static final int SORT_BY_ID = 1;
+        
+        private Random generator = new Random();
 
         @Context
         ServletContext context;
@@ -66,7 +69,22 @@ public class FunFactsResource {
 
                 return facts;
         }
+        
 
+        @GET
+        @Path("random")
+        @Produces(MediaType.APPLICATION_JSON)
+        public FunFact getRandomFact() throws IOException {
+                ArrayList<FunFact> facts = getFunFactsContext().findAllFacts();                
+                String text = facts.get(drawNumberFromOneToLimit(facts.size())).getText();
+                
+                return facts.get(drawNumberFromOneToLimit(facts.size()));
+        }
+        
+        private int drawNumberFromOneToLimit(int limit) {
+                return generator.nextInt(limit - 1) + 1;
+        }
+        
         private void sortFacts(ArrayList<FunFact> facts, int sortType) {
                 switch (sortType) {
                         case SORT_BY_ID:
@@ -82,6 +100,7 @@ public class FunFactsResource {
                 Collections.sort(facts, new Comparator<FunFact>() {
                         @Override
                         public int compare(FunFact o1, FunFact o2) {
+                                if (o1.getId() == 0) return -1;
                                 return o1.getId().compareTo(o2.getId());
                         }
                 });

@@ -67,7 +67,7 @@ header {
     font-size: 30px;
     background-color: white;
     padding: 10px;
-    
+
 }
 
 #article_content {
@@ -126,3 +126,30 @@ td {
     height: 300px;
     width: 100%;
 }
+
+#facts_table {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-collapse:separate; 
+    border-spacing:30px;;
+}
+
+.facts_cell {
+    background-color: #376ace;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+#quote {
+    display: inline-block;
+    color: darkgray;
+     width: 45%;
+     position: relative;
+    bottom: 25%;
+    margin-left: 50px;
+}
+
+

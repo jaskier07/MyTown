@@ -16,7 +16,8 @@ function getFunFacts() {
 
                 $.each(data, function (i, fact) {
                         var row = $('<tr>').appendTo(table);
-                        $('<td>').text(fact.id + ", " + fact.importance + ", " + fact.text).appendTo(row);
+                        var td_text = "ID: " + fact.id + ". " + "Istotność: " + fact.importance + ".";
+                        $('<td>').text("#" + (i + 1) + ": " + fact.text).attr("class", "facts_cell").attr("title", td_text).appendTo(row);
                 });
         }).error(function (jqXHR) {
                 console.log("incoming Text " + jqXHR.responseText);

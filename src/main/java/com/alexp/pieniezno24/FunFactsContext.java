@@ -39,7 +39,7 @@ public class FunFactsContext {
                 facts = Collections.synchronizedList(new ArrayList<FunFact>());
                 BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(PATH_TO_SOURCE_FILE)));//new FileReader(PATH_TO_SOURCE_FILE)); 
                  
-                int index = 1;
+                int index = 0;
                 int importance;
                 String text;
                 String line;
