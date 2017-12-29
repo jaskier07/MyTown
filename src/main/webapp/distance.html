@@ -11,32 +11,36 @@ and open the template in the editor.
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" type="text/css" href="style.css">
                 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-                <script type="text/javascript" src="scripts/layout.js"></script>
-                <script type="text/javascript" src="scripts/api.js"></script>
+                <script type="text/javascript" src="scripts/HandleLayout.js"></script>
+                <script type="text/javascript" src="scripts/HandleMaps.js"></script>
         </head>
         <body>
                 <header>                 
                         <script type="text/javascript">createTopBar();</script>                
                 </header>
                 <div id="content_container">
-                        <div id="article_title">Jak daleko masz do Pieniężna?</div>
+                        <div id="article_title">Dojazd</div>
+                        <div id="map"></div>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPwma7_2ztcHHAnTdnLBcQDAKPMZqFMSU&callback=initMap"
+                        async defer></script>
                         <div id="article_content">
+                                <div id="article_lead" class="inner_article">Zaplanuj swoją podróż do Pieniężna! Podaj nazwę swojego miasta i dowiedz się, jaki środek transportu jest dla Ciebie najkorzystniejszy. </div>
                                 <form id="distance_form" action="javascript:getDistance()" method="post" enctype="multipart/form-data">
                                         <table style="width: 100%">
                                                 <tr>
                                                         <th>Twoje miasto</th>
                                                         <th>
-                                                                <input form="distance_form" class="form_element" type="text" name="dist_origin" value="32">
+                                                                <input form="distance_form" class="form_element" type="text" name="dist_origin" value="Gdańsk">
                                                         </th>
                                                 </tr>
                                                 <tr>
                                                         <th>Środek transportu</th>
                                                         <th>
                                                                 <select form="distance_form" class="form_element" name="dist_transport">
-                                                                        <option value="driving">Samochód</option>
-                                                                        <option>Rower</option>
-                                                                        <option>Komunikacja publiczna</option>
-                                                                        <option>Pieszo</option>
+                                                                        <option value="0">Samochód</option>
+                                                                        <option value="1">Rower</option>
+                                                                        <option value="2">Komunikacja publiczna</option>
+                                                                        <option value="3">Pieszo</option>
                                                                 </select>
                                                           </th>
                                                 </tr>
@@ -44,8 +48,8 @@ and open the template in the editor.
                                                         <th>Jednostki odległości</th>
                                                         <th>
                                                                 <select form="distance_form" class="form_element" name="dist_units">
-                                                                        <option>Metry</option>
-                                                                        <option>Mile</option>
+                                                                        <option value="0">Metry</option>
+                                                                        <option value="1">Mile</option>
                                                                 </select>
                                                           </th>
                                                 </tr>
@@ -53,6 +57,8 @@ and open the template in the editor.
                                         <div id="centered_element">
                                                 <input form="distance_form" type="submit"  id="centered_button" name="distance_submit_form" value="Zmierz czas i odległość">
                                         </div>
+                                         <table id="distance_table" class="inner_article">
+                                        </table>
                                 </form>
                         </div>
                 </div>

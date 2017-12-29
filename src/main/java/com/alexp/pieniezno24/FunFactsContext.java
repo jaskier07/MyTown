@@ -26,7 +26,7 @@ import javax.servlet.annotation.WebServlet;
  * @author alexp
  */
 public class FunFactsContext {    
-        public static final String PATH_TO_SOURCE_FILE = "C:/Users/alexp/Dropbox/Stoodia/V semestr/AUI/lab 6 - projekt/Pieniezno24/src/main/webapp/fun facts2.txt";
+        public static final String PATH_TO_SOURCE_FILE = "C:/Users/alexp/Dropbox/Stoodia/V semestr/AUI/lab 6 - projekt/Pieniezno24/src/main/webapp/data/fun facts3.txt";
         public static final int IMPORTANCE_BEGIN = 0;
         public static final int IMPORTANCE_END = 1;
         public static final int TEXT_BEGIN = 2;

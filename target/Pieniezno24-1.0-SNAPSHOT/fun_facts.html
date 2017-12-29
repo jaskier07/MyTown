@@ -11,9 +11,8 @@ and open the template in the editor.
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" type="text/css" href="style.css">
                 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-                <script type="text/javascript" src="scripts/layout.js"></script>
-                <script type="text/javascript" src="scripts/api.js"></script>
-                <script type="text/javascript" src="scripts/funfactshandle.js"></script>
+                <script type="text/javascript" src="scripts/HandleLayout.js"></script>
+                <script type="text/javascript" src="scripts/HandleFunFacts.js"></script>
         </head>
         <body>
                 <header>                 
@@ -22,6 +21,8 @@ and open the template in the editor.
                 <div id="content_container">
                         <div id="article_title">Ciekawostki o Pieniężnie</div>
                         <div id="article_content">
+                                <div id="article_lead" class="inner_article">Dowiedz się fascynujących faktów o Pieniężnie i okolicach. Czy Józef Piłsudski pochodzi z Pieniężna?
+                                Jaka jest ulubiona pieniężniejska budowla doktora Jędrucha? Czy Pieniężno posiada obwodnicę? Sprawdź już teraz!</div>
                                 <form id="fun_facts_form" action="javascript:getFunFacts()" method="post" enctype="multipart/form-data">
                                         <table style="width:100%">
                                                 <tr>
@@ -59,7 +60,7 @@ and open the template in the editor.
                                                 <input form="fun_facts_form" type="submit"  id="centered_button" name="submit_form_facts" value="Pokaż ciekawostki">
                                         </div>
                                 </form>
-                                        <table id="facts_table">
+                                        <table id="facts_table" class="inner_article">
                                 </table>
                         </div>
                 </div>

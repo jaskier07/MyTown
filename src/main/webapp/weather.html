@@ -11,8 +11,8 @@ and open the template in the editor.
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" type="text/css" href="style.css">
                 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-                <script type="text/javascript" src="scripts/layout.js"></script>
-                <script type="text/javascript" src="scripts/api.js"></script>
+                <script type="text/javascript" src="scripts/HandleLayout.js"></script>
+                <script type="text/javascript" src="scripts/HandleWeather.js"></script>
         </head>
         <body>
                 <header>                 
@@ -25,6 +25,8 @@ and open the template in the editor.
                         <div id="article_title">Pogoda w Pieniężnie (i nie tylko!)</div>
                         <div id="data_error"></div>
                         <div id="article_content" >
+                                <div id="article_lead" class="inner_article">Sprawdź pogodę dla dowolnej lokalizacji na świecie. Podaj interesujące Cię współrzędne 
+                                        geograficzne lub po prostu kliknij "Sprawdź pogodę", by dowiedzieć się jaka będzie pogoda w Pieniężnie.</div>
                                 <form id="weather_form" action="javascript:getWeather()" method="post" enctype="multipart/form-data">
                                         <table style="width: 100%">
                                                 <tr>
@@ -38,9 +40,9 @@ and open the template in the editor.
                                                         <th>Jednostki temperatury</th>
                                                         <th>
                                                                 <select form="weather_form" class="form_element" name="temp_degree">
-                                                                        <option>Stopnie Celcjusza</option>
-                                                                        <option>Stopnie Kelvina</option>
-                                                                        <option>Stopnie Farenheita</option>
+                                                                        <option value="0">Stopnie Celcjusza</option>
+                                                                        <option value="1">Stopnie Kelvina</option>
+                                                                        <option value="2">Stopnie Farenheita</option>
                                                                 </select>
                                                           </th>
                                                 </tr>

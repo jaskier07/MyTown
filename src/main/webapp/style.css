@@ -128,9 +128,6 @@ td {
 }
 
 #facts_table {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
     border-collapse:separate; 
     border-spacing:30px;;
 }
@@ -144,12 +141,36 @@ td {
 }
 
 #quote {
-    display: inline-block;
     color: darkgray;
+    display: none;
+}
+
+#quote_container {
+    display: inline-block;
      width: 45%;
      position: relative;
     bottom: 25%;
     margin-left: 50px;
+    
+}
+#distance_table {
+    margin-top: 30px;
+    background-color: #376ace;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
 }
 
+.inner_article {
+    width: 70%;    
+    margin-left: 15%;
+    margin-right: 15%;
+}
 
+#article_lead {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding: 5px;
+    color: #376ace;
+    text-align: center;
+}
