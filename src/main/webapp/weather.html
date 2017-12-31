@@ -21,11 +21,11 @@ and open the template in the editor.
                                 $(document).ready(initForm);
                         </script>              
                 </header>
-                <div id="content_container">
-                        <div id="article_title">Pogoda w Pieniężnie (i nie tylko!)</div>
+                <article>
+                        <h1>Pogoda w Pieniężnie (i nie tylko!)</h1>
                         <div id="article_content" >
-                                <div id="error" class="inner_article"></div>
-                                <div class=" article_lead inner_article">Sprawdź pogodę dla dowolnej lokalizacji na świecie. Podaj interesujące Cię współrzędne 
+                                <div id="error" class="centered_element_15"></div>
+                                <div class=" article_lead centered_element_15">Sprawdź pogodę dla dowolnej lokalizacji na świecie. Podaj interesujące Cię współrzędne 
                                         geograficzne lub po prostu kliknij "Sprawdź pogodę", by dowiedzieć się jaka będzie pogoda w Pieniężnie.</div>
                                 <form id="weather_form" action="javascript:getWeather()" method="post" enctype="multipart/form-data">
                                         <table style="width: 100%">
@@ -53,15 +53,16 @@ and open the template in the editor.
                                         <br/>
                                         <table id="weather_table" style="width: 100%">
                                                 <tr>
-                                                        <td id="header_td" >Data i godzina</td>
-                                                        <td id="header_td">Temperatura</td>
-                                                        <td id="header_td">Img</td>
-                                                        <td id="header_td">Warunki pogodowe</td>
-                                                        <td id="header_td">Ciśnienie</td>
+                                                        <td class="header_td" >Data i godzina</td>
+                                                        <td class="header_td">Temperatura</td>
+                                                        <td class="header_td">Img</td>
+                                                        <td class="header_td">Warunki pogodowe</td>
+                                                        <td class="header_td">Ciśnienie</td>
                                                 </tr>
                                         </table>
                                 </form>
                         </div>
-                </div>
+                         <footer><img src="img/panorama.jpg" alt="panorama" id="footer_img"></footer>
+                </article>
         </body>
 </html>

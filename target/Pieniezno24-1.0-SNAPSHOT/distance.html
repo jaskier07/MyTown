@@ -18,15 +18,14 @@ and open the template in the editor.
                 <header>                 
                         <script type="text/javascript">createTopBar();</script>                
                 </header>
-                <div id="content_container">
-                        <div id="article_title">Dojazd</div>
+                <article>
+                        <h1>Dojazd</h1>
                         <div id="map"></div>
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPwma7_2ztcHHAnTdnLBcQDAKPMZqFMSU&callback=initMap"
-                        async defer></script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPwma7_2ztcHHAnTdnLBcQDAKPMZqFMSU&callback=initMap" async defer></script>
                         <div id="article_content">
-                                <div class="article_lead inner_article">Zaplanuj swoją podróż do Pieniężna! Podaj nazwę swojego miasta i dowiedz się, jaki środek transportu jest dla Ciebie najkorzystniejszy. </div>
-                        <div id="error" class="inner_article"></div>
-                                                                <form id="distance_form" action="javascript:getDistance()" method="post" enctype="multipart/form-data">
+                                <div class="article_lead centered_element_15">Zaplanuj swoją podróż do Pieniężna! Podaj nazwę swojego miasta i dowiedz się, jaki środek transportu jest dla Ciebie najkorzystniejszy. </div>
+                                <div id="error" class="centered_element_15"></div>
+                                <form id="distance_form" action="javascript:getDistance()" method="post" enctype="multipart/form-data">
                                         <table style="width: 100%">
                                                 <tr>
                                                         <th>Twoje miasto</th>
@@ -43,7 +42,7 @@ and open the template in the editor.
                                                                         <option value="2">Komunikacja publiczna</option>
                                                                         <option value="3">Pieszo</option>
                                                                 </select>
-                                                          </th>
+                                                        </th>
                                                 </tr>
                                                 <tr>
                                                         <th>Jednostki odległości</th>
@@ -52,16 +51,17 @@ and open the template in the editor.
                                                                         <option value="0">Metry</option>
                                                                         <option value="1">Mile</option>
                                                                 </select>
-                                                          </th>
+                                                        </th>
                                                 </tr>
                                         </table>
                                         <div id="centered_element">
                                                 <input form="distance_form" type="submit"  id="centered_button" name="distance_submit_form" value="Zmierz czas i odległość">
                                         </div>
-                                         <table id="distance_table" class="inner_article">
+                                                <table id="distance_table" class="centered_element_15">
                                         </table>
                                 </form>
                         </div>
-                </div>
+                         <footer><img src="img/panorama.jpg" alt="panorama" id="footer_img"></footer>
+                </article>
         </body>
 </html>

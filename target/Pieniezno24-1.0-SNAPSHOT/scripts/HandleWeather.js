@@ -31,14 +31,11 @@ function getWeather() {
 
         if (isNaN(xCoord) || isNaN(yCoord) || xCoord > 90 || xCoord < -90 || yCoord > 180 || yCoord < -180) {
                 $("#error").text("Wprowadzone dane są niepoprawne.").fadeIn("slow");
-        }
-        else {
+        } else {
                 $("#error").text("").hide();
                 $.getJSON(REQUEST_URI, {"lat": xCoord, "lon": yCoord, "units": getStringParameterByDegreeType(temp_degree), "cnt": MEASUREMENTS_PER_DAY, "lang": "pl", "APPID": OPEN_WEATHER_KEY}, function success(data) {
-                        
                         var table = $("#weather_table");
                         $("#weather_table").find("tr:gt(0)").remove();
-                        
 
                         for (i = 0; i < MEASUREMENTS_PER_DAY; i++) {
                                 var row = $("<tr>").appendTo(table);

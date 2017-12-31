@@ -15,7 +15,7 @@
  </div>
  </div>
  </header>
- <div id="content_container">a </div>
+ <article>a </div>
  */
 
 var SRC_IMG_1 = "img/1.jpg";
@@ -38,11 +38,13 @@ function createTopBar() {
                 }).error(function (jqXHR) {
                         console.log("incoming Text " + jqXHR.responseText);
                 });
+                
+                $("#footer_img").fadeIn(400);
         });
 }
 
 function changeImage() {
-        var img = $("#whole_image");
+        var img = $("#img_max_width");
         
         switch (img.attr("src")) {
                 case SRC_IMG_1:

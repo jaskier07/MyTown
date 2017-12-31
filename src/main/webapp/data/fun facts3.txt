@@ -12,7 +12,7 @@
 2;W Pieniê¿nie nie wybudowano dot¹d ¿adnego lotniska.
 1;Pieniê¿no posiada w³asn¹ obwodnicê, czym zawstydza np. Olsztyn.
 3;Pieniê¿no podczas wojny polsko-krzy¿ackiej jako jedyne miasto na Warmi opowiedzia³o siê za Krzy¿akami.
-1;Nazwa miasta pochodzi od Seweryna Pieniê¿nego. Ma on tyle wspólnego z miastem, co UG z rzetelnym nauczaniem.
+1;Nazwa miasta pochodzi od Seweryna Pieniê¿nego. Ma on jedn¹ wspóln¹ rzecz z nazw¹ miasta - nazwisko.
 2;95% miasta zosta³o zrujnowanych w czasie II Wojny Œwiatowej.
 1;Józef Pi³sudski nigdy nie by³ w Pieniê¿nie.
 2;Pienie¿no jako jedyna miejscowoœæ w gminie posiada biedronkê.
@@ -22,3 +22,7 @@
 2;Podczas jednych z do¿ynek na scenie wystêpowa³ rolnik, który w TVP szuka³ ¿ony.
 2;W Pieniê¿nie wybudowano nowy budynek gimnazjum w roku, w którym zlikwidowano gimnazja.
 3;Miko³aj Kopernik spêdzi³ 3 dni w Pieniê¿nie.
+2;Rosyjski biznesman chcia³ zakupiæ pieniê¿niejski pomnik za ciê¿arówkê zbo¿a.
+1;Na pieniê¿niejskim wiadukcie znajduje siê nieoficjalna Polska Galeria Zespo³ów Muzycznych.
+1;W Pieniê¿nie w 2008 roku pewna rodzina wygra³a 8 milionów z³otych w lotku. Mieszkañcy zaczêli witaæ siê z nimi has³em "po¿ycz stówê".
+3;¯eby nie by³o - osobiœcie kocham Pieniê¿no, czasem jednak mo¿na przedstawiæ je w trochê krzywszym zwierciadle ;)
