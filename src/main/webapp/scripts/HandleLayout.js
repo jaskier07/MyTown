@@ -18,6 +18,11 @@
  <div id="content_container">a </div>
  */
 
+var SRC_IMG_1 = "img/1.jpg";
+var SRC_IMG_2 = "img/2.jpg";
+var SRC_IMG_3 = "img/3.jpg";
+var SRC_IMG_4 = "img/4.jpg";
+
 function createTopBar() {
         $("header").append('<div id="top_logo"><img id="logo" src="img/logo3.png" alt="logo"/><div id="quote_container"><div id="quote"></div></div></div>');
         $("header").append('<div id="top_menu"><div id="top_menu_container"></div></div>');
@@ -34,5 +39,25 @@ function createTopBar() {
                         console.log("incoming Text " + jqXHR.responseText);
                 });
         });
+}
+
+function changeImage() {
+        var img = $("#whole_image");
+        
+        switch (img.attr("src")) {
+                case SRC_IMG_1:
+                        img.attr("src", SRC_IMG_2);
+                        break;
+                case SRC_IMG_2:
+                        img.attr("src", SRC_IMG_3);
+                        break;
+                case SRC_IMG_3:
+                        img.attr("src", SRC_IMG_4);
+                        break;
+                case SRC_IMG_4:
+                        img.attr("src", SRC_IMG_1);
+                        break;
+        }
+        img.fadeIn("slow");
 }
 

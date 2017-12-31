@@ -29,22 +29,30 @@ function getWeather() {
         var yCoord = $("input[name='y_coord']").val();
         var temp_degree = $("select[name='temp_degree']").val();
 
-         $.getJSON(REQUEST_URI, {"lat": xCoord, "lon": yCoord, "units": getStringParameterByDegreeType(temp_degree), "cnt": MEASUREMENTS_PER_DAY, "lang": "pl", "APPID": OPEN_WEATHER_KEY}, function success(data) {
-                var table = $("#weather_table");
-                $("#weather_table").find("tr:gt(0)").remove();
+        if (isNaN(xCoord) || isNaN(yCoord) || xCoord > 90 || xCoord < -90 || yCoord > 180 || yCoord < -180) {
+                $("#error").text("Wprowadzone dane są niepoprawne.").fadeIn("slow");
+        }
+        else {
+                $("#error").text("").hide();
+                $.getJSON(REQUEST_URI, {"lat": xCoord, "lon": yCoord, "units": getStringParameterByDegreeType(temp_degree), "cnt": MEASUREMENTS_PER_DAY, "lang": "pl", "APPID": OPEN_WEATHER_KEY}, function success(data) {
+                        
+                        var table = $("#weather_table");
+                        $("#weather_table").find("tr:gt(0)").remove();
+                        
 
-                for (i = 0; i < MEASUREMENTS_PER_DAY; i++) {
-                        var row = $("<tr>").appendTo(table);
-                        $("<td>").text(data.list[i].dt_txt).appendTo(row);
-                        $("<td>").text(data.list[i].main.temp + " " + DEGREE_SYMBOL + getDegreeRepresentation(temp_degree)).appendTo(row);
-                        var imgTd = $("<td>").appendTo(row);
-                        $("<img>").attr("class", "weather_img").attr("src", "img/" + getImgSrcByWeatherType(data.list[i].weather[0].icon)).appendTo(imgTd);
-                        $("<td>").text(data.list[i].weather[0].description).appendTo(row);
-                        $("<td>").text(data.list[i].main.pressure + " hPa").appendTo(row);
-                }
-        }).error(function (jqXHR) {
-                console.log("incoming Text " + jqXHR.responseText);
-        });
+                        for (i = 0; i < MEASUREMENTS_PER_DAY; i++) {
+                                var row = $("<tr>").appendTo(table);
+                                $("<td>").text(data.list[i].dt_txt).appendTo(row);
+                                $("<td>").text(data.list[i].main.temp + " " + DEGREE_SYMBOL + getDegreeRepresentation(temp_degree)).appendTo(row);
+                                var imgTd = $("<td>").appendTo(row);
+                                $("<img>").attr("class", "weather_img").attr("src", "img/" + getImgSrcByWeatherType(data.list[i].weather[0].icon)).appendTo(imgTd);
+                                $("<td>").text(data.list[i].weather[0].description).appendTo(row);
+                                $("<td>").text(data.list[i].main.pressure + " hPa").appendTo(row);
+                        }
+                }).error(function (jqXHR) {
+                        console.log("incoming Text " + jqXHR.responseText);
+                });
+        }
 }
 
 function dbg(txt) {
@@ -62,7 +70,7 @@ function getDegreeRepresentation(temp) {
         }
 }
 
-function getStringParameterByDegreeType(temp) {        
+function getStringParameterByDegreeType(temp) {
         switch (temp) {
                 case CELCIUS:
                         return "metric";

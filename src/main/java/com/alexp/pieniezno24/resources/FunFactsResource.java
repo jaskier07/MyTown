@@ -96,7 +96,6 @@ public class FunFactsResource {
                         .units(getUnitSystem(units))
                         .await();
                 
-                int i = 0;
                 return matrix;
         }        
         

@@ -24,8 +24,9 @@ and open the template in the editor.
                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPwma7_2ztcHHAnTdnLBcQDAKPMZqFMSU&callback=initMap"
                         async defer></script>
                         <div id="article_content">
-                                <div id="article_lead" class="inner_article">Zaplanuj swoją podróż do Pieniężna! Podaj nazwę swojego miasta i dowiedz się, jaki środek transportu jest dla Ciebie najkorzystniejszy. </div>
-                                <form id="distance_form" action="javascript:getDistance()" method="post" enctype="multipart/form-data">
+                                <div class="article_lead inner_article">Zaplanuj swoją podróż do Pieniężna! Podaj nazwę swojego miasta i dowiedz się, jaki środek transportu jest dla Ciebie najkorzystniejszy. </div>
+                        <div id="error" class="inner_article"></div>
+                                                                <form id="distance_form" action="javascript:getDistance()" method="post" enctype="multipart/form-data">
                                         <table style="width: 100%">
                                                 <tr>
                                                         <th>Twoje miasto</th>

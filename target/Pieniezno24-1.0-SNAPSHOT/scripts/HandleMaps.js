@@ -13,9 +13,9 @@ function getRowTitle(row) {
                 case 0:
                         return "Miasto początkowe";
                 case 1:
-                      return "Długość trasy";
-              case 2:
-                      return "Czas przejazdu";
+                        return "Długość trasy";
+                case 2:
+                        return "Czas przejazdu";
         }
 }
 
@@ -24,21 +24,29 @@ function getDistance() {
         var destination = "pieniężno";
         var transportMode = $("select[name='dist_transport']").val();
         var units = $("select[name='dist_units']").val();
-        
-      $.getJSON("resources/facts/distance", {"origins": origin, "destinations": destination, "mode": transportMode, "units" : units}, function (data) {
-                $("#distance_table").find("tr").remove();
-                var table = $("#distance_table");
-                var row = $('<tr>').appendTo(table);
-                var tdTitle = $('<td>').text("Miasto początkowe").appendTo(row);
-                $('<td>').text( data.originAddresses[0]).appendTo(row);
-                
-                row = $('<tr>').appendTo(table);
-                tdTitle = $('<td>').text("Długość trasy").appendTo(row);
-                $('<td>').text( data.rows[0].elements[0].distance.humanReadable).appendTo(row);
-                
-                row = $('<tr>').appendTo(table);
-                tdTitle = $('<td>').text("Czas przejazdu").appendTo(row);
-                $('<td>').text( data.rows[0].elements[0].duration.humanReadable).appendTo(row);
+
+        $.getJSON("resources/facts/distance", {"origins": origin, "destinations": destination, "mode": transportMode, "units": units}, function (data) {
+
+                if (data.rows[0].elements[0].distance === null) {
+                        $("#error").text("Miasto nie zostało odnalezione.").fadeIn("slow");
+                        dbg(data.rows[0].elements[0].distance);
+                } 
+                else {
+                        $("#error").text("").hide();
+                        $("#distance_table").find("tr").remove();
+                        var table = $("#distance_table");
+                        var row = $('<tr>').appendTo(table);
+                        var tdTitle = $('<td>').text("Miasto początkowe").appendTo(row);
+                        $('<td>').text(data.originAddresses[0]).appendTo(row);
+
+                        row = $('<tr>').appendTo(table);
+                        tdTitle = $('<td>').text("Długość trasy").appendTo(row);
+                        $('<td>').text(data.rows[0].elements[0].distance.humanReadable).appendTo(row);
+
+                        row = $('<tr>').appendTo(table);
+                        tdTitle = $('<td>').text("Czas przejazdu").appendTo(row);
+                        $('<td>').text(data.rows[0].elements[0].duration.humanReadable).appendTo(row);
+                }
         }).error(function (jqXHR) {
                 console.log("incoming Text " + jqXHR.responseText);
         });
