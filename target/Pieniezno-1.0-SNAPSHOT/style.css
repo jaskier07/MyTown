@@ -1,0 +1,204 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-12-26, 18:43:03
+    Author     : alexp
+*/
+
+a {
+    text-decoration:none;
+}
+a.underlined {
+    text-decoration:underline;
+}
+a:visited {
+    color:white;
+} 
+
+body {
+    background-color: #58595b;
+    margin: 0;
+    font-family: Cambria;
+}
+
+header {
+    background-color: red;
+    height: 130px;
+}
+
+h1 {
+    font-family: Cambria;
+    font-size: 30px;
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+    font-weight: normal;
+}
+
+#top_logo {
+    background-color: white;
+    height: 75%;
+}
+
+#top_menu{
+    background-color: #376ace;
+    height: 25%;
+}
+
+#top_menu_container {
+    margin-left: 20%;
+    line-height: 35px;
+}
+
+.top_menu_element {
+    margin-right: 30px;  
+    color: white;
+    display: inline;
+}
+
+article {
+    background-color: #e2e2e2;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#article_content {
+    padding: 10px;
+}
+
+.form_element {
+    padding: 5px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.form_element_coord {
+    padding: 5px;
+    width: 22%;
+    margin-bottom: 10px;
+}
+
+#logo {
+    height: 100%;
+    margin-left: 20%;
+}
+
+#centered_button {
+    margin: 0 auto;
+    height: 40px;
+    font-size: 15px;
+    background-color: #376ace;
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+td {
+    font-weight: normal; 
+    height: 50px;
+    text-align: center;
+}
+
+.header_td {
+    font-weight: normal; 
+    background-color: #376ace;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.weather_img {
+    width: 60px;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+#facts_table {
+    border-collapse:separate; 
+    border-spacing:30px;;
+}
+
+.facts_cell {
+    background-color: #376ace;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+#quote {
+    color: darkgray;
+    display: none;
+}
+
+#quote_container {
+    display: inline-block;
+     width: 45%;
+     position: relative;
+    bottom: 25%;
+    margin-left: 50px;
+    
+}
+#distance_table {
+    margin-top: 30px;
+    background-color: #376ace;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+}
+
+.centered_element_15 {
+    width: 70%;    
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 20px;
+}
+
+.centered_element_20 {
+    margin-left:20%;
+    margin-right: 20%;
+}
+
+.article_lead {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding: 5px;
+    color: #376ace;
+    text-align: center;
+}
+
+#img_max_width {
+    width: 100%;
+    height: 100%;
+    margin: -80px 0px 0px 0;
+}
+
+#img_max_width_container {
+    width: 100%;
+    height: 600px;
+    margin-bottom: -70px;;
+    overflow: hidden;    
+}
+
+#error {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #e83e3e;
+    padding: 15px;
+    color: white;
+}
+footer {
+    width: 100%;
+}
+#footer_img {
+    width: 100%;
+    display: none;
+}

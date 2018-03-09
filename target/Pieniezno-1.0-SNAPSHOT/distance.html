@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+        <head>
+                <title>Jak daleko jesteś od Pieniężna?</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+                <script type="text/javascript" src="scripts/HandleLayout.js"></script>
+                <script type="text/javascript" src="scripts/HandleMaps.js"></script>
+        </head>
+        <body>
+                <header>                 
+                        <script type="text/javascript">createTopBar();</script>                
+                </header>
+                <article>
+                        <h1>Dojazd</h1>
+                        <div id="map"></div>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPwma7_2ztcHHAnTdnLBcQDAKPMZqFMSU&callback=initMap" async defer></script>
+                        <div id="article_content">
+                                <div class="article_lead centered_element_15">Zaplanuj swoją podróż do Pieniężna! Podaj nazwę swojego miasta i dowiedz się, jaki środek transportu jest dla Ciebie najkorzystniejszy. </div>
+                                <div id="error" class="centered_element_15"></div>
+                                <form id="distance_form" action="javascript:getDistance()" method="post" enctype="multipart/form-data">
+                                        <table style="width: 100%">
+                                                <tr>
+                                                        <th>Twoje miasto</th>
+                                                        <th>
+                                                                <input form="distance_form" class="form_element" type="text" name="dist_origin" value="Gdańsk">
+                                                        </th>
+                                                </tr>
+                                                <tr>
+                                                        <th>Środek transportu</th>
+                                                        <th>
+                                                                <select form="distance_form" class="form_element" name="dist_transport">
+                                                                        <option value="0">Samochód</option>
+                                                                        <option value="1">Rower</option>
+                                                                        <option value="2">Komunikacja publiczna</option>
+                                                                        <option value="3">Pieszo</option>
+                                                                </select>
+                                                        </th>
+                                                </tr>
+                                                <tr>
+                                                        <th>Jednostki odległości</th>
+                                                        <th>
+                                                                <select form="distance_form" class="form_element" name="dist_units">
+                                                                        <option value="0">Metry</option>
+                                                                        <option value="1">Mile</option>
+                                                                </select>
+                                                        </th>
+                                                </tr>
+                                        </table>
+                                        <div id="centered_element">
+                                                <input form="distance_form" type="submit"  id="centered_button" name="distance_submit_form" value="Zmierz czas i odległość">
+                                        </div>
+                                                <table id="distance_table" class="centered_element_15">
+                                        </table>
+                                </form>
+                        </div>
+                         <footer><img src="img/panorama.jpg" alt="panorama" id="footer_img"></footer>
+                </article>
+        </body>
+</html>

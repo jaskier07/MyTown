@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+        <head>
+                <title>Pogoda</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+                <script type="text/javascript" src="scripts/HandleLayout.js"></script>
+                <script type="text/javascript" src="scripts/HandleWeather.js"></script>
+        </head>
+        <body>
+                <header>                 
+                        <script type="text/javascript">
+                                createTopBar();
+                                $(document).ready(initForm);
+                        </script>              
+                </header>
+                <article>
+                        <h1>Pogoda w Pieniężnie (i nie tylko!)</h1>
+                        <div id="article_content" >
+                                <div id="error" class="centered_element_15"></div>
+                                <div class=" article_lead centered_element_15">Sprawdź pogodę dla dowolnej lokalizacji na świecie. Podaj interesujące Cię współrzędne 
+                                        geograficzne lub po prostu kliknij "Sprawdź pogodę", by dowiedzieć się jaka będzie pogoda w Pieniężnie.</div>
+                                <form id="weather_form" action="javascript:getWeather()" method="post" enctype="multipart/form-data">
+                                        <table style="width: 100%">
+                                                <tr>
+                                                        <th>Współrzędne geograficzne</th>
+                                                        <th>
+                                                                <input form="weather_form" class="form_element_coord" type="text" name="x_coord">
+                                                                <input form="weather_form" class="form_element_coord" type="text" name="y_coord" >
+                                                        </th>
+                                                </tr>
+                                                <tr>
+                                                        <th>Jednostki temperatury</th>
+                                                        <th>
+                                                                <select form="weather_form" class="form_element" name="temp_degree">
+                                                                        <option value="0">Stopnie Celcjusza</option>
+                                                                        <option value="1">Stopnie Kelvina</option>
+                                                                        <option value="2">Stopnie Farenheita</option>
+                                                                </select>
+                                                          </th>
+                                                </tr>
+                                        </table>
+                                        <div id="centered_element">
+                                                <input form="weather_form" type="submit"  id="centered_button" name="submit_form" value="Sprawdź pogodę">
+                                        </div>
+                                        <br/>
+                                        <table id="weather_table" style="width: 100%">
+                                                <tr>
+                                                        <td class="header_td" >Data i godzina</td>
+                                                        <td class="header_td">Temperatura</td>
+                                                        <td class="header_td">Img</td>
+                                                        <td class="header_td">Warunki pogodowe</td>
+                                                        <td class="header_td">Ciśnienie</td>
+                                                </tr>
+                                        </table>
+                                </form>
+                        </div>
+                         <footer><img src="img/panorama.jpg" alt="panorama" id="footer_img"></footer>
+                </article>
+        </body>
+</html>
